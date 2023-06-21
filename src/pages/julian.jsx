@@ -57,10 +57,10 @@ function Julian() {
         </div>
       </div>
 
-      <div className='flex justify-center mt-12'>
-        <div className="flex">
-          <div className="flex justify-start lg:flex-row flex-col">
-            <div className="lg:w-1/2 text-black px-10 2xl:text-lg md:text-sm  text-base relative font-avenir text-justify">
+      <div className='flex h-max w-full justify-center mt-12'>
+        <div className="flex justify-center items-center">
+          <div className="flex justify-center items-end lg:flex-row flex-col">
+            <div className="lg:w-1/2 text-black px-10 2xl:text-xl md:text-sm  text-base relative font-avenir text-justify">
               <p><span className="font-bold text-xl">Crayon, </span><br /> <br />
                 En tant qu’écrivain, on considère le crayon comme l’unique fidèle. Cet outil, nous suit partout où qu’on aille, dans tous les moments, dans chaque étape de vie, chaque ligne. Le temps passe et la trace qu’il laisse est plus qu’un simple trait, c’est l’histoire. Un crayon a une histoire, une vie et on peut tout aussi bien la liée à la nôtre. Ces quelques lignes vont justement aborder ce lien et ce parallèle. Un parallèle commençant dans celui qui en fait mauvais usage. Le crayon neuf, tout récent, fraîchement née, peut être détruit. On peut le casser à de multiples occasions, on peut le forcer à écrire et à l’user jusqu’à appuyer pour qu’il se rétrécisse sous l’impuissance de notre force. Le mal est dans toutes les mains qui ne savent pas faire usage du crayon. Chaque crayon à son écrivain, celui-ci est l’unique à pouvoir faire ressortir le meilleur de ce crayon. Malheureusement, avant que l’écriture et l’écrivain ne se rencontrent, il faut du temps, laissant le crayon entre de mauvaise mains. C’est entre ses mains qu’il se raccourcit, se casse et devient de moins en moins accessible aux mains d’autrui. Jusqu’au moment où il tombe de les mains de celui qui va en faire l’usage de la plus belle des manières. L’histoire du crayon est un parallèle à celui de nos cœurs, de nos vies. On a beau passer par le pire, un jour, on rencontrera ceux qui nous ferons vivre le meilleur et qui nous ferons sentir ce que l’on est vraiment. Un texte en symbiose entre un crayon et un écrivain. Un parallèle à cette créativité que j’ai découvert et où ma plume ne cesse de s’aiguiser.
                 <br /> <br />En y croyant et en osant, on ne peut pas garantir la réussite. Mais en arrêtant d’y croire, on peut garantir que ça échouera alors pourquoi ne pas essayer ?</p><br />

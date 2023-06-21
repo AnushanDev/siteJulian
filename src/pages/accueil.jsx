@@ -113,7 +113,7 @@ export default function Home() {
 
 
     if (newTransition) return <Transition />
-    return <div style={{ backgroundImage: `url("${bg}")` }} className={`relative w-screen h-screen ${whiteAnimation ? 'fadeOut' : 'bg-white'}`}>
+    return <div style={{ background: `linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("${bg}")`, backgroundRepeat: "repeat" }} className={`relative w-screen h-screen ${whiteAnimation ? 'fadeOut' : 'bg-white'}`}>
         <div className='w-screen h-screen absolute z-0 object-contain opacity-80 flex justify-center items-center'>
             {images.length > 0 && <img className="2xl:w-[600px] 2xl:h-[600px] md:h-[400px]  md:w-[400px] h-[300px] w-[300px] object-cover" src={images[index]} alt="looping through images" />}
         </div>

@@ -74,7 +74,7 @@ const Categorie = () => {
     if (transition) return <Transition />
     if (document == null || newTransition) return <Transition />
     return (
-        <div style={{ backgroundImage: `url("${bg}")` }} className='relative w-screen h-screen flex flex-col justify-between md:pb-10 pb-5' >
+        <div style={{ background: `linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("${bg}")`, backgroundRepeat: "repeat" }}  className='relative w-screen h-screen flex flex-col justify-between md:pb-10 pb-5' >
 
             <div className='absolute w-screen h-screen  flex flex-col justify-center items-center text-black py-10'>
                 <div className='flex flex-col justify-center items-center'>

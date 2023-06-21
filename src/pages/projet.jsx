@@ -54,7 +54,7 @@ const Projet = () => {
     if (projets.length === 0 || newTransition) return <Transition />
     if (transition) return <Transition />
     return (
-        <div style={{ backgroundImage: `url("${bg}")` }} className='relative w-screen h-screen flex flex-col justify-between ' >
+        <div style={{ background: `linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("${bg}")`, backgroundRepeat: "repeat" }} className='relative w-screen h-screen flex flex-col justify-between ' >
             <div className='h-32 w-full relative md:px-20 px-4 flex  items-start z-10 md:pt-10 pt-5'>
                 <div className='w-full items-center flex justify-between'>
                     <div className='md:w-40 w-20  relative' onClick={() => { navigate("/") }}>
