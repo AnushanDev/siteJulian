@@ -98,7 +98,7 @@ const Categorie = () => {
                     <div className='md:w-40 w-20  relative' onClick={() => { navigate("/") }}>
                         <img src={logo} className=" object-cover custom-cursor" />
                     </div>
-                    <div className='relative flex gap-10'>
+                    <div className='relative flex md:gap-10 gap-5'>
                         <h1 className='text-black md:text-[30px] text-[20px] font-helvetica font-semibold custom-cursor select-none' onClick={() => { navigate("/projets") }}>WORKS</h1>
                         <h1 className='text-black md:text-[30px] text-[20px] font-bold select-none font-helvetica custom-cursor' onClick={() => { navigate("/aboutMe") }}>ABOUT ME</h1>
                     </div>

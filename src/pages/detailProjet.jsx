@@ -180,7 +180,7 @@ function DetailProjet() {
                                 <div className='flex flex-col justify-start items-start'>
                                     {splitSepration(document.separation).map((item, index) => {
                                         if (item["type"] == "" || item["type"] == " ") {
-                                            return <h1 key={index} className="lg:leading-[0.722] leading-[0.75]  lg:pb-[4px] pb-[1px] pl-[4px] lg:pl-[8px] text-white font-black lg:text-[160px] text-[100px] italic  w-full  ">
+                                            return <h1 key={index} className="lg:leading-[0.722] leading-[0.75]  lg:pb-[5px] pb-[1px] pl-[4px] lg:pl-[9px] text-white font-black lg:text-[168px] text-[100px] italic  w-full  ">
                                                 {item["mot"]}
                                             </h1>
                                         }
