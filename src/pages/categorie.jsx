@@ -45,7 +45,6 @@ const Categorie = () => {
                 const newData = querySnapshot.docs
                     .map((doc) => ({ ...doc.data(), id: doc.id }));
                 setArtistes(newData);
-                console.log(artistes, newData);
             })
     }
 
@@ -55,7 +54,6 @@ const Categorie = () => {
 
         const querySnapshot = await getDocs(q);
         const docs = querySnapshot.docs.map(doc => doc.data());
-        console.log(docs);
         setDocument(docs[0]);
     };
     const src = "https://images.unsplash.com/photo-1516981442399-a91139e20ff8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTEzfHxyYXB8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60";

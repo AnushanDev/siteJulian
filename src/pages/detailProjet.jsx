@@ -123,7 +123,6 @@ function DetailProjet() {
                 monMot += separation[i];
             }
             else if (separation[i] == "-") {
-                console.log("Yes");
                 maMap = { "type": symbole, "mot": monMot }
                 maList.push(maMap);
                 monMot = "";
@@ -141,7 +140,6 @@ function DetailProjet() {
                 monMot = "";
             }
         }
-        console.log(maList);
         return maList;
     }
 
@@ -179,20 +177,20 @@ function DetailProjet() {
                                         onClick={() => openLightbox(removeDuplicatesAndSort(imageUrls)[0])} />}
                             </div>
                             <div className='lg:w-[500px] lg:h-[500px] w-[300px] h-[300px]   bg-[#D8D8D8] border bottom-2 border-black flex justify-start items-end'>
-                                <div className='flex flex-col'>
+                                <div className='flex flex-col justify-start items-start'>
                                     {splitSepration(document.separation).map((item, index) => {
                                         if (item["type"] == "" || item["type"] == " ") {
-                                            return <h1 key={index} className="leading-[0.9]  text-white font-black lg:text-[120px] text-[77px] italic  w-full  ">
+                                            return <h1 key={index} className="lg:leading-[0.722] leading-[0.75]  lg:pb-[4px] pb-[1px] pl-[4px] lg:pl-[8px] text-white font-black lg:text-[160px] text-[100px] italic  w-full  ">
                                                 {item["mot"]}
                                             </h1>
                                         }
-                                        return <h1 key={index} className="leading-[0.9]  text-white font-black lg:text-[120px] text-[77px] italic  w-full  ">
-                                           - {item["mot"]}
+                                        return <h1 key={index} className="leading-[0.8]  text-white font-black lg:text-[150px] text-[77px] italic  w-full  ">
+                                            - {item["mot"]}
                                         </h1>
                                     })}
                                 </div>
                             </div>
-                            <div className='lg:w-[500px] lg:h-[500px] w-[300px] h-[300px]   bg-[#D8D8D8] border bottom-2 border-black flex justify-center items-center lg:text-[25px] md:text-[18px] text-[12px] font-light font-avenir'>
+                            <div className='lg:w-[500px] lg:h-[500px] w-[300px] h-[300px]  bg-[#D8D8D8] border bottom-2 border-black flex justify-center items-center lg:text-[25px] md:text-[18px] text-[12px] font-light font-avenir'>
                                 <div>
 
                                     <div className="flex flex-col gap-1">
@@ -200,7 +198,6 @@ function DetailProjet() {
                                             <h1>{document.type_travail.toUpperCase()} : </h1>
                                             <h1 className="font-semibold italic">AIJI</h1>
                                         </div>
-
                                         <div className="flex gap-1">
                                             <h1>{document.type_profil.toUpperCase()} : </h1>
                                             <h1 className="font-semibold italic">{document.nom.toUpperCase()}</h1>
@@ -242,7 +239,7 @@ function DetailProjet() {
                             <div className='lg:w-[500px] lg:h-[500px] w-[300px] h-[300px]   bg-[#D8D8D8] border bottom-2 border-black flex justify-center items-center'>
                                 {document.slug == "RigoFive" ? <iframe
                                     className='custom-cursor max-w-[60%] max-h-[60%]'
-                                    src={`https://www.youtube.com/embed/5FJdM9F422A`}
+                                    src={`https://www.youtube.com/embed/c5-BXhFjnhI`}
                                     frameBorder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
                                     allowFullScreen
@@ -253,8 +250,8 @@ function DetailProjet() {
                                         alt="" className='custom-cursor max-w-[60%] max-h-[60%]'
                                         onClick={() => openLightbox(removeDuplicatesAndSort(imageUrls)[2])} />}
                             </div>
-                            <div className='lg:w-[500px] lg:h-[500px] w-[300px] h-[300px]   bg-[#D8D8D8] border bottom-2 border-black flex justify-center items-center lg:text-[16px] text-[9px] px-1 font-light font-avenir'>
-                                <div className="md:px-10">
+                            <div className='lg:w-[500px] lg:h-[500px] w-[300px] h-[300px]   bg-[#D8D8D8] border bottom-2 border-black flex justify-center items-center lg:text-[16px] text-[9px] text-justify px-1 font-light font-avenir'>
+                                <div className="px-10">
                                     {splitParagraph(document.description).map((item, index) => {
                                         if (index == 0) {
                                             return <p key={index} className="font-bold">{item}<br /><br /></p>;
