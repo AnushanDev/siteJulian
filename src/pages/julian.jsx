@@ -66,7 +66,7 @@ function Julian() {
                 <br /> <br />En y croyant et en osant, on ne peut pas garantir la réussite. Mais en arrêtant d’y croire, on peut garantir que ça échouera alors pourquoi ne pas essayer ?</p><br />
               <p className='text-end font-bold italic'>AIJI</p>
             </div>
-            <div className="lg:w-1/2 text-black lg:text-white px-10 lg:pl-60 md:text-lg text-base lg:py-0 pt-10 pb-20 relative font-avenir text-justify flex items-end">
+            <div className="lg:w-1/2 text-black lg:text-white px-10 lg:pl-40 md:text-lg text-base lg:py-0 pt-10 pb-20 relative font-avenir text-justify flex items-end">
               <p className='leading-[1.3]'><span className='md:text-2xl text-lg font-bold font-helvetica md:pb-0'>JULIAN AGUILAR</span><br />16.11.1998<br />SUISSE - ESPAGNOL<br />FROM GENEVA</p>
             </div>
           </div>
