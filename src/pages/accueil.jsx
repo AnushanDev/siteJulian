@@ -56,13 +56,8 @@ export default function Home() {
         // Replace this with your actual loading logic
         if (firstLogin) {
             setNewTransition(false);
-            const timer = setTimeout(() => {
-                setFirstLogin(false);
-                setFirstWhiteAnimation(true);
-            }, 1700); // 3 seconds
-
-            // Clean up the timer on unmount
-            return () => clearTimeout(timer);
+            setFirstLogin(false);
+            setFirstWhiteAnimation(true);
         }
         else {
             const timer = setTimeout(() => {
@@ -123,7 +118,7 @@ export default function Home() {
             {images.length > 0 && <img className="lg:w-[600px] lg:h-[600px] md:h-[500px] md:w-[500px] h-[300px] w-[300px] object-cover" src={images[index]} alt="looping through images" />}
         </div>
 
-        <div className=' relative w-screen h-screen flex flex-col items-center justify-between py-10'>
+        <div className=' relative w-screen h-screen flex flex-col items-center justify-between md:py-10 py-5'>
 
             <div className='h-32 w-full relative md:px-20 px-4 flex  items-start z-10'>
                 <div className='w-full items-center flex justify-between'>

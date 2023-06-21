@@ -114,7 +114,35 @@ function DetailProjet() {
     }
 
     function splitSepration(separation) {
-        return separation.split("-");
+        let maList = [];
+        let maMap = {};
+        let monMot = "";
+        let symbole = ""
+        for (var i = 0; i < separation.length; i++) {
+            if (separation[i] != "-" && separation[i] != " ") {
+                monMot += separation[i];
+            }
+            else if (separation[i] == "-") {
+                console.log("Yes");
+                maMap = { "type": symbole, "mot": monMot }
+                maList.push(maMap);
+                monMot = "";
+                symbole = "-";
+            }
+            else {
+                maMap = { "type": symbole, "mot": monMot }
+                maList.push(maMap);
+                monMot = "";
+                symbole = " ";
+            }
+            if (i == separation.length - 1) {
+                maMap = { "type": symbole, "mot": monMot }
+                maList.push(maMap);
+                monMot = "";
+            }
+        }
+        console.log(maList);
+        return maList;
     }
 
 
@@ -122,7 +150,7 @@ function DetailProjet() {
     return (
         <>
             <div style={{ backgroundImage: `url("${bg}")` }} className=' w-screen flex flex-col justify-between' >
-                <div className='h-32 w-full relative md:px-20 px-4 flex  items-start z-10 pt-10'>
+                <div className='h-32 w-full relative md:px-20 px-4 flex  items-start z-10 md:pt-10 pt-5'>
                     <div className='w-full items-center flex justify-between'>
                         <div className='md:w-40 w-20  relative' onClick={() => { navigate("/") }}>
                             <img src={logo} className=" object-cover custom-cursor" />
@@ -133,13 +161,13 @@ function DetailProjet() {
                         </div>
                     </div>
                 </div>
-                <div className='flex justify-center items-center my-20'>
+                <div className='flex justify-center items-center md:my-20 mt-10 mb-20'>
                     <div className='w-4/6'>
-                        <div className='mt-10 i my-20 gap-32 grid grid-cols-2 justify-items-center grid-flow-row'>
-                            <div className='lg:w-[500px] lg:h-[500px] md:w-[300px] md:h-[300px] w-[180px] h-[180px]   bg-[#D8D8D8] border bottom-2 border-black flex justify-center items-center'>
+                        <div className='md:mt-10 md:my-20 gap-32 grid md:grid-cols-2 grid-cols-1 justify-items-center grid-flow-row'>
+                            <div className='lg:w-[500px] lg:h-[500px] w-[300px] h-[300px] bg-[#D8D8D8] border bottom-2 border-black flex justify-center items-center'>
                                 {document.slug == "RigoFive" ? <iframe
                                     className='custom-cursor max-w-[60%] max-h-[60%]'
-                                    src={`https://www.youtube.com/embed/-zhOud9YD7g`}
+                                    src={`https://www.youtube.com/embed/9_WOqVIW98c`}
                                     frameBorder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
                                     allowFullScreen
@@ -150,21 +178,21 @@ function DetailProjet() {
                                         alt="" className='custom-cursor max-w-[60%] max-h-[60%]'
                                         onClick={() => openLightbox(removeDuplicatesAndSort(imageUrls)[0])} />}
                             </div>
-                            <div className='lg:w-[500px] lg:h-[500px] md:w-[300px] md:h-[300px] w-[180px] h-[180px]   bg-[#D8D8D8] border bottom-2 border-black flex justify-start items-end'>
+                            <div className='lg:w-[500px] lg:h-[500px] w-[300px] h-[300px]   bg-[#D8D8D8] border bottom-2 border-black flex justify-start items-end'>
                                 <div className='flex flex-col'>
                                     {splitSepration(document.separation).map((item, index) => {
-                                        if (index == 0 || index == 2) {
-                                            return <h1 className="leading-[0.9]  text-white font-black lg:text-[110px] md:text-[50px] text-[50px] italic  w-full  ">
-                                                {item}
+                                        if (item["type"] == "" || item["type"] == " ") {
+                                            return <h1 key={index} className="leading-[0.9]  text-white font-black lg:text-[120px] text-[77px] italic  w-full  ">
+                                                {item["mot"]}
                                             </h1>
                                         }
-                                        return <h1 className="leading-[0.9] text-white font-black lg:text-[110px] md:text-[50px] text-[50px] italic  w-full  ">
-                                            - {item}
+                                        return <h1 key={index} className="leading-[0.9]  text-white font-black lg:text-[120px] text-[77px] italic  w-full  ">
+                                           - {item["mot"]}
                                         </h1>
                                     })}
                                 </div>
                             </div>
-                            <div className='lg:w-[500px] lg:h-[500px] md:w-[300px] md:h-[300px] w-[180px] h-[180px]   bg-[#D8D8D8] border bottom-2 border-black flex justify-center items-center lg:text-[25px] md:text-[18px] text-[12px] font-light font-avenir'>
+                            <div className='lg:w-[500px] lg:h-[500px] w-[300px] h-[300px]   bg-[#D8D8D8] border bottom-2 border-black flex justify-center items-center lg:text-[25px] md:text-[18px] text-[12px] font-light font-avenir'>
                                 <div>
 
                                     <div className="flex flex-col gap-1">
@@ -181,7 +209,7 @@ function DetailProjet() {
                                         {document.projet != null ?
                                             <div className="flex gap-1">
                                                 <h1>PROJET : </h1>
-                                                <h1 className="font-semibold italic">{document.projet}</h1>
+                                                <h1 className="font-semibold italic">{document.projet.toUpperCase()}</h1>
                                             </div>
                                             : null
                                         }
@@ -197,10 +225,10 @@ function DetailProjet() {
 
                                 </div>
                             </div>
-                            <div className='lg:w-[500px] lg:h-[500px] md:w-[300px] md:h-[300px] w-[180px] h-[180px]   bg-[#D8D8D8] border bottom-2 border-black flex justify-center items-center'>
+                            <div className='lg:w-[500px] lg:h-[500px] w-[300px] h-[300px]   bg-[#D8D8D8] border bottom-2 border-black flex justify-center items-center'>
                                 {document.slug == "RigoFive" ? <iframe
                                     className='custom-cursor max-w-[60%] max-h-[60%]'
-                                    src={`https://www.youtube.com/embed/dkzedFcjr8c`}
+                                    src={`https://www.youtube.com/embed/Ux18pCo6gsY`}
                                     frameBorder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
                                     allowFullScreen
@@ -211,7 +239,7 @@ function DetailProjet() {
                                         alt="" className='custom-cursor max-w-[60%] max-h-[60%]'
                                         onClick={() => openLightbox(removeDuplicatesAndSort(imageUrls)[1])} />}
                             </div>
-                            <div className='lg:w-[500px] lg:h-[500px] md:w-[300px] md:h-[300px] w-[180px] h-[180px]   bg-[#D8D8D8] border bottom-2 border-black flex justify-center items-center'>
+                            <div className='lg:w-[500px] lg:h-[500px] w-[300px] h-[300px]   bg-[#D8D8D8] border bottom-2 border-black flex justify-center items-center'>
                                 {document.slug == "RigoFive" ? <iframe
                                     className='custom-cursor max-w-[60%] max-h-[60%]'
                                     src={`https://www.youtube.com/embed/5FJdM9F422A`}
@@ -225,19 +253,19 @@ function DetailProjet() {
                                         alt="" className='custom-cursor max-w-[60%] max-h-[60%]'
                                         onClick={() => openLightbox(removeDuplicatesAndSort(imageUrls)[2])} />}
                             </div>
-                            <div className='lg:w-[500px] lg:h-[500px] md:w-[300px] md:h-[300px] w-[180px] h-[180px]   bg-[#D8D8D8] border bottom-2 border-black flex justify-center items-center lg:text-[16px] md:text-[9px] text-[6px] px-1 font-light font-avenir'>
+                            <div className='lg:w-[500px] lg:h-[500px] w-[300px] h-[300px]   bg-[#D8D8D8] border bottom-2 border-black flex justify-center items-center lg:text-[16px] text-[9px] px-1 font-light font-avenir'>
                                 <div className="md:px-10">
                                     {splitParagraph(document.description).map((item, index) => {
                                         if (index == 0) {
-                                            return <p className="font-bold">{item}<br /><br /></p>;
+                                            return <p key={index} className="font-bold">{item}<br /><br /></p>;
                                         }
-                                        return <p className="">{item}<br /><br /></p>;
+                                        return <p key={index} className="">{item}<br /><br /></p>;
                                     })}
                                 </div>
                             </div>
                             {removeDuplicatesAndSort(imageUrls).map((image, index) => {
                                 if (index > 2) {
-                                    return <div className='lg:w-[500px] lg:h-[500px] md:w-[300px] md:h-[300px] w-[180px] h-[180px]   bg-[#D8D8D8] border bottom-2 border-black flex justify-center items-center'>
+                                    return <div className='lg:w-[500px] lg:h-[500px] w-[300px] h-[300px]   bg-[#D8D8D8] border bottom-2 border-black flex justify-center items-center'>
                                         <img key={index}
                                             src={image}
                                             alt="" className='custom-cursor max-w-[60%] max-h-[60%]'
@@ -245,6 +273,17 @@ function DetailProjet() {
                                     </div>
                                 }
                             })}
+                            {document.slug == "RigoFive" ?
+                                <div className='lg:w-[500px] lg:h-[500px] w-[300px] h-[300px]   bg-[#D8D8D8] border bottom-2 border-black flex justify-center items-center'>
+                                    <iframe
+                                        className='custom-cursor max-w-[60%] max-h-[60%]'
+                                        src={`https://www.youtube.com/embed/DOfCKMWums8`}
+                                        frameBorder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                                        allowFullScreen
+                                        title="Embedded youtube"
+                                    />
+                                </div> : null}
                         </div>
                         {lightboxVisible && (
                             <div
@@ -268,7 +307,7 @@ function DetailProjet() {
 
                     </div>
                 </div>
-                <div className='relative w-full md:px-20 md:pb-10 px-4'>
+                <div className='relative w-full md:px-20 md:pb-10 pb-5 px-4'>
                     <div className='flex flex-row justify-between font-avenir lg:text-2xl md:text-[20px] text-[11px]'>
                         <div className='text-black font-extralight'>
                             <h2 className='select-none'>

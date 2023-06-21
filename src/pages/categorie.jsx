@@ -8,12 +8,6 @@ import { useParams } from 'react-router-dom';
 import { db } from '../tools/firebase';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 
-const imagesUrls = [
-    { "src": "https://images.unsplash.com/photo-1674510891276-bd1fc1a13889?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80", "alt": "Pierre Jacque" },
-    { "src": "https://images.unsplash.com/photo-1686174097378-e3b5ce2ccf06?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80", "alt": "Cristinan Dior" },
-    { "src": "https://images.unsplash.com/photo-1686070166401-bdf39d2d774b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80", "alt": "Pop Smoke" }
-]
-
 
 const projetsTitre = ["Artiste", "Football", "Banque", "Lifestyle", "Event"];
 
@@ -82,11 +76,10 @@ const Categorie = () => {
     if (transition) return <Transition />
     if (document == null || newTransition) return <Transition />
     return (
-        <div style={{ backgroundImage: `url("${bg}")` }} className='relative w-screen h-screen flex flex-col justify-between pb-10' >
+        <div style={{ backgroundImage: `url("${bg}")` }} className='relative w-screen h-screen flex flex-col justify-between md:pb-10 pb-5' >
 
             <div className='absolute w-screen h-screen  flex flex-col justify-center items-center text-black py-10'>
                 <div className='flex flex-col justify-center items-center'>
-
                     <h1 className='relative italic text-center items-start lg:text-[80px] md:text-[60px] text-[40px] font-black h-fit select-none mb-10 ' style={{
                         color: 'transparent',
                         WebkitTextFillColor: 'transparent',
@@ -102,7 +95,7 @@ const Categorie = () => {
                 </div>
 
             </div>
-            <div className='h-32 w-full relative md:px-20 px-4 flex  items-start z-10 pt-10'>
+            <div className='h-32 w-full relative md:px-20 px-4 flex  items-start z-10 md:pt-10 pt-5'>
                 <div className='w-full items-center flex justify-between'>
                     <div className='md:w-40 w-20  relative' onClick={() => { navigate("/") }}>
                         <img src={logo} className=" object-cover custom-cursor" />

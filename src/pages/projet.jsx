@@ -67,13 +67,13 @@ const Projet = () => {
     if (transition) return <Transition />
     return (
         <div style={{ backgroundImage: `url("${bg}")` }} className='relative w-screen h-screen flex flex-col justify-between ' >
-            <div className='h-32 w-full relative md:px-20 px-4 flex  items-start z-10 pt-10'>
+            <div className='h-32 w-full relative md:px-20 px-4 flex  items-start z-10 md:pt-10 pt-5'>
                 <div className='w-full items-center flex justify-between'>
                     <div className='md:w-40 w-20  relative' onClick={() => { navigate("/") }}>
                         <img src={logo} className=" object-cover custom-cursor" />
                     </div>
                     <div className='relative flex gap-10'>
-                        <h1 className='text-black md:text-[30px] text-[20px] font-helvetica font-semibold custom-cursor select-none' onClick={() => { navigate("/projets") }}>WORKS</h1>
+                        <h1 className='text-black md:text-[30px] text-[20px] font-helvetica font-semibold select-none'>WORKS</h1>
                         <h1 className='text-black md:text-[30px] text-[20px] font-bold select-none font-helvetica custom-cursor' onClick={() => { navigate("/aboutMe") }}>ABOUT ME</h1>
                     </div>
                 </div>
@@ -104,7 +104,7 @@ const Projet = () => {
                 </div>
             </div>
 
-            <div className='relative w-full md:px-20 md:pb-10 px-4'>
+            <div className='relative w-full md:px-20 md:pb-10 pb-5 px-4'>
                 <div className='flex flex-row justify-between font-avenir lg:text-2xl md:text-[20px] text-[11px]'>
                     <div className='text-black font-extralight'>
                         <h2 className='select-none'>

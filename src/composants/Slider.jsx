@@ -42,19 +42,19 @@ export default function MySlider({ imagesUrls, categorie }) {
                     <div className='flex flex-row gap-2 items-center justify-center '>
                         {imagesUrls.map((url, index) => {
                             if (index == 0) {
-                                return <div className='relative w-full md:h-56 h-24 ml-2 justify-center flex items-end lg:text-[35px] md:text-[50px] text-[20px]  hover:text-opacity-100 text-opacity-0 text-white font-bold font-forma custom-cursor' onClick={() => { navigate(`/projets/${categorie}/${url.slug}`) }}>
+                                return <div key={index} className='relative w-full h-full ml-2 justify-center flex items-end lg:text-[35px] md:text-[25px] text-[12px]  hover:text-opacity-100 text-opacity-0 text-white font-bold font-forma custom-cursor' onClick={() => { navigate(`/projets/${categorie}/${url.slug}`) }}>
                                     <img className='object-cover absolute custom-cursor' src={url.image_background} alt={url.nom} />
-                                    <div className='h-full w-9/12 relative flex flex-col justify-center items-start'>
-                                        <h1 className='relative custom-cursor font-helvetica leading-[1]'>{url.slug.toUpperCase()}</h1>
-                                        <h1 className='relative custom-cursor text-[25px] font-light leading-[1.2]'>{url.type_travail_complet}</h1>
+                                    <div className='h-full w-9/12 relative flex flex-col custom-cursor justify-center items-start lg:py-20 md:py-10 py-4'>
+                                        <h1 className='relative custom-cursor font-helvetica leading-[1]'>{url.nom.toUpperCase()}</h1>
+                                        <h1 className='relative custom-cursor lg:text-[25px] md:text-[16px] text-[9px] font-light leading-[1.2]'>{url.type_travail_complet}</h1>
                                     </div>
                                 </div>
                             }
-                            return <div className='relative w-full md:h-56 h-24 flex justify-center items-end lg:text-[35px] md:text-[50px] text-[20px] hover:text-opacity-100 text-opacity-0 text-white font-bold font-forma custom-cursor' onClick={() => { navigate(`/projets/${categorie}/${url.slug}`) }}>
+                            return <div key={index} className='relative w-full h-full flex justify-center items-end lg:text-[35px] md:text-[25px] text-[12px] hover:text-opacity-100 text-opacity-0 text-white font-bold font-forma custom-cursor' onClick={() => { navigate(`/projets/${categorie}/${url.slug}`) }}>
                                 <img className=' object-cover absolute custom-cursor' src={url.image_background} alt={url.nom} />
-                                <div className='h-full w-9/12 relative flex flex-col justify-center items-start'>
-                                    <h1 className='relative custom-cursor font-helvetica leading-[1]'>{url.slug.toUpperCase()}</h1>
-                                    <h1 className='relative custom-cursor text-[25px] font-light leading-[1.2]'>{url.type_travail_complet}</h1>
+                                <div className='h-full w-9/12 relative flex flex-col custom-cursor justify-center lg:items-start lg:py-20 md:py-10 py-4'>
+                                    <h1 className='relative custom-cursor font-helvetica leading-[1]'>{url.nom.toUpperCase()}</h1>
+                                    <h1 className='relative custom-cursor lg:text-[25px] md:text-[16px]  text-[9px] font-light leading-[1.2]'>{url.type_travail_complet}</h1>
                                 </div>
                             </div>
                         })}
